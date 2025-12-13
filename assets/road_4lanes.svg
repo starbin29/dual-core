@@ -1,0 +1,36 @@
+<svg viewBox="0 0 896 1344" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 -->
+  <rect width="896" height="1344" fill="#8B4513"/>
+  
+  <!-- 왼쪽 가장자리 -->
+  <rect x="0" y="0" width="25" height="1344" fill="#654321"/>
+  
+  <!-- 오른쪽 가장자리 -->
+  <rect x="871" y="0" width="25" height="1344" fill="#654321"/>
+  
+  <!-- 차선 (4개 차선이므로 3개의 차선 구분선) -->
+  <!-- 차선 폭: (896-50)/4 = 211.5px -->
+  <!-- 첫 번째 차선 구분선 -->
+  <rect x="223" y="0" width="26" height="87" fill="#F5DEB3"/>
+  <rect x="223" y="177" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="223" y="417" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="223" y="657" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="223" y="897" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="223" y="1137" width="26" height="150" fill="#F5DEB3"/>
+  
+  <!-- 두 번째 차선 구분선 -->
+  <rect x="435" y="0" width="26" height="87" fill="#F5DEB3"/>
+  <rect x="435" y="177" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="435" y="417" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="435" y="657" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="435" y="897" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="435" y="1137" width="26" height="150" fill="#F5DEB3"/>
+  
+  <!-- 세 번째 차선 구분선 -->
+  <rect x="647" y="0" width="26" height="87" fill="#F5DEB3"/>
+  <rect x="647" y="177" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="647" y="417" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="647" y="657" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="647" y="897" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="647" y="1137" width="26" height="150" fill="#F5DEB3"/>
+</svg>

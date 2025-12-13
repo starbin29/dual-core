@@ -1,0 +1,44 @@
+<svg viewBox="0 0 896 1344" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 -->
+  <rect width="896" height="1344" fill="#8B4513"/>
+  
+  <!-- 왼쪽 가장자리 -->
+  <rect x="0" y="0" width="25" height="1344" fill="#654321"/>
+  
+  <!-- 오른쪽 가장자리 -->
+  <rect x="871" y="0" width="25" height="1344" fill="#654321"/>
+  
+  <!-- 차선 (5개 차선이므로 4개의 차선 구분선) -->
+  <!-- 차선 폭: (896-50)/5 = 169.2px -->
+  <!-- 첫 번째 차선 구분선 -->
+  <rect x="182" y="0" width="26" height="87" fill="#F5DEB3"/>
+  <rect x="182" y="177" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="182" y="417" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="182" y="657" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="182" y="897" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="182" y="1137" width="26" height="150" fill="#F5DEB3"/>
+  
+  <!-- 두 번째 차선 구분선 -->
+  <rect x="351" y="0" width="26" height="87" fill="#F5DEB3"/>
+  <rect x="351" y="177" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="351" y="417" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="351" y="657" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="351" y="897" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="351" y="1137" width="26" height="150" fill="#F5DEB3"/>
+  
+  <!-- 세 번째 차선 구분선 (중앙) -->
+  <rect x="520" y="0" width="26" height="87" fill="#F5DEB3"/>
+  <rect x="520" y="177" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="520" y="417" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="520" y="657" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="520" y="897" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="520" y="1137" width="26" height="150" fill="#F5DEB3"/>
+  
+  <!-- 네 번째 차선 구분선 -->
+  <rect x="689" y="0" width="26" height="87" fill="#F5DEB3"/>
+  <rect x="689" y="177" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="689" y="417" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="689" y="657" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="689" y="897" width="26" height="150" fill="#F5DEB3"/>
+  <rect x="689" y="1137" width="26" height="150" fill="#F5DEB3"/>
+</svg>

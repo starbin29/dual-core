@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  background: #000;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+}
+
+#hud {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 2;
+}
+
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(#004d40, #001a12);
+}
