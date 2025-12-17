@@ -97,6 +97,8 @@ function lightenColor(hex, amt) {
 }
 
 function drawMenu() {
+   showFeedbackLink(); // 🔹 메뉴 진입 시 링크 표시
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   if (bgImage.complete) ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
   ctx.fillStyle = "rgba(0,0,0,0.6)";
@@ -138,6 +140,34 @@ function drawMenu() {
   );
   menuFrameId = requestAnimationFrame(drawMenu);
 }
+// ===== FEEDBACK LINK (only visible in menu) =====
+let feedbackLink = null;
+
+function showFeedbackLink() {
+  if (!feedbackLink) {
+    feedbackLink = document.createElement("a");
+    feedbackLink.href = "https://github.com/starbin29/dual-core-game/discussions";
+    feedbackLink.target = "_blank";
+    feedbackLink.innerText = "💬 Feedback";
+    feedbackLink.style.position = "fixed";
+    feedbackLink.style.bottom = "20px";
+    feedbackLink.style.right = "25px";
+    feedbackLink.style.color = "#00ffd0";
+    feedbackLink.style.fontFamily = "Orbitron, sans-serif";
+    feedbackLink.style.fontSize = "18px";
+    feedbackLink.style.textDecoration = "none";
+    feedbackLink.style.opacity = "0.8";
+    feedbackLink.style.transition = "opacity 0.3s";
+    feedbackLink.onmouseenter = () => (feedbackLink.style.opacity = "1.0");
+    feedbackLink.onmouseleave = () => (feedbackLink.style.opacity = "0.8");
+    document.body.appendChild(feedbackLink);
+  }
+  feedbackLink.style.display = "block";
+}
+
+function hideFeedbackLink() {
+  if (feedbackLink) feedbackLink.style.display = "none";
+}
 
 canvas.addEventListener("mousemove", e => {
   if (gameStarted) return;
@@ -159,6 +189,7 @@ canvas.addEventListener("click", e => {
   modes.forEach((mode, i) => {
     const x = startX + i * 160, y = canvas.height / 2 + 100, w = 140, h = 70;
     if (mx >= x && mx <= x + w && my >= y && my <= y + h) {
+      hideFeedbackLink();
       if (!playerName) {
         playerName = prompt("Enter your name:") || "PLAYER";
         localStorage.setItem("dualcore_name", playerName);
