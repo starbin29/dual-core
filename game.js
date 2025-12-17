@@ -146,7 +146,7 @@ let feedbackLink = null;
 function showFeedbackLink() {
   if (!feedbackLink) {
     feedbackLink = document.createElement("a");
-    feedbackLink.href = "https://github.com/starbin29/dual-core-game/discussions";
+    feedbackLink.href = "https://github.com/starbin29/dual-core/discussions";
     feedbackLink.target = "_blank";
     feedbackLink.innerText = "💬 Feedback";
     feedbackLink.style.position = "fixed";
