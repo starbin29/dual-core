@@ -95,6 +95,64 @@ function lightenColor(hex, amt) {
   r = Math.min(255, r); g = Math.min(255, g); b = Math.min(255, b);
   return `rgb(${r},${g},${b})`;
 }
+// ===== MENU INFO PANEL (GDD + Resolution Notice) =====
+const MENU_GDD_TITLE = "GDD (Short)";
+const MENU_GDD_LINES = [
+  "• 장르: 테트리스 + 차량 회피 (듀얼 플레이)",
+  "• 목표: 라인 클리어 & 충돌 회피로 생존",
+  "• 조작(테트리스): A/D 이동, S 회전, W 드롭",
+  "• 조작(자동차): ←/→ 차선 이동",
+  "• 규칙: 충돌 시 Life -1, 속도/BGM 점점 증가",
+  "• 종료: Life=0 → 점수 리더보드 기록",
+];
+const MENU_RESO_NOTE = "※ 최적 해상도: 1920×1080 (브라우저 전체화면 권장)";
+
+function drawRoundRect(x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
+function drawMenuInfoPanel() {
+  // 화면이 너무 좁으면 패널이 버튼과 겹칠 수 있어서 살짝 위로/작게 조정
+  const panelW = Math.min(520, Math.max(360, canvas.width * 0.28));
+  const panelH = Math.min(420, Math.max(300, canvas.height * 0.40));
+  const x = 40;
+  const y = canvas.height / 2 - panelH / 2;
+
+  // 패널 배경
+  ctx.save();
+  ctx.fillStyle = "rgba(0,0,0,0.55)";
+  ctx.strokeStyle = "rgba(255,255,255,0.20)";
+  drawRoundRect(x, y, panelW, panelH, 14);
+  ctx.fill();
+  ctx.stroke();
+
+  // 타이틀
+  ctx.fillStyle = "white";
+  ctx.font = "22px Orbitron";
+  ctx.fillText(MENU_GDD_TITLE, x + 18, y + 34);
+
+  // 본문
+  ctx.font = "16px Orbitron";
+  let ty = y + 68;
+  for (const line of MENU_GDD_LINES) {
+    ctx.fillStyle = "rgba(255,255,255,0.92)";
+    ctx.fillText(line, x + 18, ty);
+    ty += 24;
+  }
+
+  // 해상도 안내 (강조)
+  ctx.font = "16px Orbitron";
+  ctx.fillStyle = "#00ffd0";
+  ctx.fillText(MENU_RESO_NOTE, x + 18, y + panelH - 24);
+
+  ctx.restore();
+}
 
 function drawMenu() {
    showFeedbackLink(); // 🔹 메뉴 진입 시 링크 표시
@@ -103,6 +161,8 @@ function drawMenu() {
   if (bgImage.complete) ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
   ctx.fillStyle = "rgba(0,0,0,0.6)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
+// ... 오버레이 깔고 난 다음
+  drawMenuInfoPanel(); // ← 여기 추가
 
   ctx.fillStyle = "white";
   ctx.font = "38px Orbitron";
